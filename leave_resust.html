@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>请假审批</title>
+		<link rel="stylesheet" href="index.css" />
+		<link rel="stylesheet" href="default.css" />
+		<link rel="stylesheet" href="layui/css/layui.css">
+		<!-- 	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>  vue -->
+		<script src="layui/layui.js" charset="utf-8"></script>
+		<script src="jquery-3.5.1/jquery-3.5.1.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jsplumb@2.8.0/dist/js/jsplumb.min.js"></script>
+		<script src="https://demosc.chinaz.net/Files/DownLoad/webjs1/201604/jiaoben4176/layer/jquery.min.js"></script>
+		<script src="https://demosc.chinaz.net/Files/DownLoad/webjs1/201604/jiaoben4176/layer/layer.js"></script>
+		<link rel="stylesheet" href="//apps.bdimg.com/libs/jqueryui/1.10.4/css/jquery-ui.min.css">
+		<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="//apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="index.js"></script>
+		<script src="json_factory.js"></script>
+	</head>
+	<body onload="getCheckBox(),fun()">
+		<!-- 审批字段选择与信息输入 -->
+		<div class="approval_name">
+			<!-- 头部输入框及保存配置 -->
+			<div class="top_input">
+				<input id="approval_text" type="text" name="title" required lay-verify="required" placeholder="请输入审批流程"
+				 autocomplete="off" class="layui-input">
+				<button id="approval_btn" type="button" class="layui-btn" onclick="sendData()">保存配置</button>
+			</div>
+			
+			<!-- 审批主面板 -->
+			<div class="approval_main">
+				<!-- 字段选择核心部分 -->
+				<div class="main_select">
+					<!-- 复选框box -->
+					<div class="select">
+						<ul>
+							<li class="select_title">字段选择</li>
+							<li id="s_box0">
+								<div class="s_fuxuan" id="cs_box0">
+									<div class="layui-input-block">
+										<input id="check_box0" class="s_fuxuan_b" type="checkbox"  name="box" value="" checked="checked"
+										 onclick="getCheckBox()">
+									</div>
+								</div>
+								<div class="s_name" id="cs_text0">
+									<p></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- 申请人效果展示 -->
+				<div class="main_shows">
+					<div class="shows_title">&nbsp;&nbsp;&nbsp;&nbsp;申请人效果展示</div>
+					<!-- 展示主面板 -->
+					<div class="shows_main">
+						<ul>
+							<form id="shenpi_ziduan">
+							<li class="box" id="box0">
+								<div class="box_1"><i class="layui-icon layui-icon-slider" style="margin: 15px; font-size: 45px; color: #E5E5E5;"></i>
+								</div>
+								<div class="box_2"></div>
+								<!-- 删除按钮 -->
+								<div class="box_3"><i class="layui-icon layui-icon-delete ds1" style="margin: 15px; font-size: 45px; color: #E5E5E5;"
+									 onclick="deleteBox(0)"></i></div>
+								<!-- 表单 -->
+								<div class="box_4">
+									<div class="layui-input-block">
+										<input name="" class="layui-input box_4_input" type="text" placeholder="" autocomplete="off" lay-verify="title">
+									</div>
+								</div>
+							</li>
+							</form>
+						</ul>
+					</div>
+					<div class="shows_button">
+						<button id="shows_btn" type="button" class="layui-btn"onclick="send_ziduan()">效果预览</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 审批条件流程图 -->
+
+		<div class="approval_flow" style="height:600px;width:1000; overflow:auto;">
+			<!-- 添加条件按钮 -->
+			<button id="flow_btn" type="button" class="layui-btn" data-method="setTop"><i class="layui-icon layui-icon-addition"
+				 style="font-size: 20px; color: white;"></i>添加条件</button>
+			<!-- 申请人块 -->
+			<div class="no_sqingr">
+				<div id="a" class="css_a"></br>申</br>请</br>人</div>
+			</div>
+			<!-- 审批操作按钮块 -->
+			<div class="shengpi">
+				<div id="d_00" class="spi" style="">
+					<div id="b_00" class="css_b" style="margin-left:50px;">审批人<i class="layui-icon layui-icon-username" style="font-size: 20px; color: white;"></i></div>
+					<div id="c_00" class="sp">
+						<!-- 同意后复制d_00 -->
+						<div id="1dc_00" class="item" style="margin-left:50px;">同意<i class="layui-icon layui-icon-add-circle" style="font-size: 20px; color: white;"></i>
+						</div>
+						<div id="2dc_00" class="item" style="margin-left:50px;">驳回<i class="layui-icon layui-icon-refresh-3" style="font-size: 20px; color: white;"></i>
+						</div>
+						<div id="3dc_00" class="item" style="margin-left:50px;">拒绝<i class="layui-icon layui-icon-close-fill" style="font-size: 25px; color: white;"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 审批人配置 -->
+		<div class="content_sprpz">
+			<form id="shenpi_man">
+				<ul>
+					<li class="shenpi_input1">
+						<p>层级名称:</p>
+						<input id="sp_cj" type="floor_name" name="title" placeholder="" autocomplete="off" class="layui-input" value="">
+					</li>
+					<li class="shenpi_input2">
+						<div class="input2_s">
+							<p>审批角色:</p>
+							<select name="role_name" lay-filter="aihao" id="sp_r1">
+								<option id="r0" value=""></option>
+							</select>
+						</div>
+		
+						<div class="input2_s">
+							<p>权限维度:</p>
+							<select name="tableName" lay-filter="aihao" id="sp_q2">
+								<option value="" id="q0"></option>
+							</select>
+						</div>
+		
+					</li>
+					<li class="shenpi_input3">
+						<div class="input3_s">
+							<p>是否发短信:</p>
+							<div class="layui-input-block">
+								<input id="x1" name="msg"  type="radio" value="1">&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
+								<input id="x2" name="msg"  type="radio" value="0">&nbsp;&nbsp;否</input>
+							</div>
+						</div>
+		
+						<div class="input3_s">
+							<p>是否发邮件:</p>
+							<div class="layui-input-block">
+								<input id="y1" name="email"  type="radio" value="1">&nbsp;&nbsp;是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
+								<input id="y2" name="email"  type="radio" value="0">&nbsp;&nbsp;否</input>
+							</div>
+						</div>
+		
+						<div class="input3_s">
+							<p>审批方式:</p>
+							<div class="layui-input-block">
+								<input id="f1" name="way"  type="radio" value="1">&nbsp;&nbsp;按钮审批&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</input>
+								<input id="f2" name="way"  type="radio" value="0">&nbsp;&nbsp;签字审批</input>
+							</div>
+						</div>
+					</li>
+					<li class="shenpi_input4">
+						<input type="button" name="title" value="提交" onclick="send_spr()">
+					</li>
+				</ul>
+			</form>
+		</div>
+	</body>
+</html>

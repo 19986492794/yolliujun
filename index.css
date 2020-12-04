@@ -1,0 +1,605 @@
+/* 审批上半部分 */
+.approval_name {
+	margin: 10px 15px 20px 30px;
+	width: 1450px;
+	height: 650px;
+	background-color: #FFFFFF;
+	border: 2px solid #E5E5E5;
+	border-radius: 10px;
+}
+
+/* 头部输入框及按钮 */
+.top_input {
+	width: 1450px;
+	height: 80px;
+	/* border: 1px solid black; */
+}
+
+/* 头部输入框 */
+#approval_text {
+	margin: 20px 0 0 30px;
+	width: 300px;
+	height: 35px;
+	border: 2px solid #528AE9;
+	border-radius: 4px;
+}
+
+/* 保存配置 */
+#approval_btn {
+	width: 100px;
+	height: 35px;
+	font-size: 16px;
+	line-height: 10px;
+	position: relative;
+	left: 1250px;
+	top: -34px;
+	background-color: #5188F3;
+}
+
+/* 审批字段主部分 */
+.approval_main {
+	width: 1450px;
+	height: 547px;
+}
+
+/* 字段选择 */
+.approval_main .main_select {
+	width: 450px;
+	height: 547px;
+	border: 2px solid #E5E5E5;
+	border-radius: 4px;
+	float: left;
+}
+
+.main_select .select {
+	margin: 40px auto;
+	width: 400px;
+	height: 350px;
+	/* border: 1px solid #E5E5E5; */
+}
+
+.select ul {}
+
+.select ul li {
+	width: 400px;
+	height: 50px;
+	font-size: 17px;
+	line-height: 50px;
+	/* border: 1px solid #E5E5E5; */
+}
+
+/* 复选框 */
+.s_fuxuan {
+	width: 48px;
+	height: 50px;
+	border: 1px solid #E5E5E5;
+	float: left;
+}
+
+.s_fuxuan_b {
+	position: relative;
+	top: 3px;
+	left: -93px;
+	width: 15px;
+	height: 15px;
+}
+
+.s_name {
+	width: 348px;
+	height: 50px;
+	border: 1px solid #E5E5E5;
+	float: right;
+}
+
+.s_name p {
+	margin: 0 50px;
+}
+
+.select_title {
+	text-align: center;
+	background-color: #F6F6F6;
+	border: 1px solid #E5E5E5;
+}
+
+/* 字段信息填写 */
+.approval_main .main_shows {
+	width: 968px;
+	height: 547px;
+	border: 2px solid #E5E5E5;
+	border-radius: 4px;
+	float: right;
+}
+
+.shows_title {
+	margin: 20px auto;
+	width: 940px;
+	height: 50px;
+	border-bottom: 1px solid #E5E5E5;
+	font-size: 17px;
+	line-height: 35px;
+}
+
+
+/* 字段属性 */
+.shows_main {}
+
+.shows_main ul li {
+	margin: auto;
+	width: 580px;
+	height: 60px;
+	font-size: 17px;
+	line-height: 50px;
+	border: 1px solid #E5E5E5;
+	/* position:absolute; */
+}
+
+/* 字段信息填写 */
+
+/* 下拉框风格 */
+.Selects {
+	width: 250px;
+	height: 40px;
+	border: 1px solid #E5E5E5;
+
+}
+
+.box_1 {
+	/* 移动的三条杠 */
+	width: 75px;
+	height: 60px;
+	/* background-color: #007DDB; */
+	float: left;
+	margin-left: 5px;
+}
+
+.box_2 {
+	/* 字段名称 */
+	width: 105px;
+	height: 60px;
+	/* background-color: #00FF00; */
+	float: left;
+	margin-left: 10px;
+	font-size: 17px;
+	line-height: 50px;
+}
+
+.box_3 {
+	/* 删除按钮 */
+	width: 75px;
+	height: 60px;
+	/* background-color: #2F4056; */
+	float: right;
+	margin-left: 10px;
+}
+
+.box_4 {
+	/* 输入框 */
+	width: 250px;
+	height: 60px;
+	/* background-color: #0C0C0C; */
+	float: right;
+	margin: 0 25px;
+}
+
+.box_4 .layui-input-block {
+	margin: 5px 0;
+	width: 250px;
+	height: 40px;
+}
+
+.box_4 .layui-input-block .box_4_input {
+	margin: 10px 0;
+	width: 250px;
+	height: 40px;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+.box_4 .layui-input-block .fu1 {
+	margin: 20px 0px;
+}
+
+.box_4 .layui-input-block .fu2 {
+	margin: 20px 30px;
+}
+
+.box_4 .layui-input-block .select_job {
+	width: 250px;
+	height: 35px;
+	border: 1px solid #E5E5E5;
+}
+
+.box_4 .layui-form #time1 {
+	margin: 10px 0px;
+}
+
+.box_4 .layui-form #time2 {
+	margin: 10px 0px;
+}
+
+.shows_button {}
+
+.shows_button #shows_btn {
+	width: 100px;
+	height: 35px;
+	font-size: 16px;
+	line-height: 10px;
+	position: relative;
+	left: 450px;
+	top: 20px;
+	background-color: #5188F3;
+}
+
+
+/* 审批下半部分 */
+.approval_flow {
+	margin: 10px 15px 20px 30px;
+	width: 1450px;
+	background-color: #FFFFFF;
+	border: 2px solid #E5E5E5;
+	border-radius: 10px;
+	position: relative;
+	/* 局部滚动 */
+}
+
+.approval_flow #flow_btn {
+	width: 112px;
+	height: 40px;
+	position: relative;
+	left: 80px;
+	top: 40px;
+	background-color: #5188F3;
+	font-size: 17px;
+}
+
+/* 条件配置 */
+#boxx {
+	border: 2px solid #E5E5E5;
+	width: 430px;
+	height: auto;
+	position: relative;
+	background-color: #FFFFFF;
+	top: 0px;
+	right: 0px;
+	border-radius: 10px;
+	/* display: none;/* 消失 */
+	/* z-index: 2;/* 提高元素层级 */
+	/* 	opacity: 0px; */
+	*/ */
+}
+
+.approval_flow:hover .approval_config {
+	display: block;
+	/* 出现 */
+}
+
+.config_head {
+	width: 430px;
+	height: 50px;
+	margin: -1px auto;
+	border-radius: 10px 10px 0 0;
+	background-color: #5188F3;
+}
+
+.config_head p {
+	color: white;
+	font-size: 17px;
+	line-height: 50px;
+	margin: 0 20px;
+}
+
+
+/* 配置复选框 */
+.config_checkbox {
+	width: 430px;
+	height: 50px;
+	margin: 10px auto;
+}
+
+.config_checkbox .layui-input-block {
+	font-size: 17px;
+	line-height: 50px;
+	margin: 0 100px;
+}
+
+/* 配置下拉框 */
+.config_select {
+	width: 430px;
+	/* height: 40px; */
+	margin: 0px auto;
+	font-size: 17px;
+}
+
+.config_select .config_s {
+	width: 105px;
+	height: 30px;
+	margin-right: 5px;
+	margin-top: 10px;
+
+}
+
+
+.config_select .c3 {
+	width: 112px;
+	height: 30px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+.config_btn {
+	width: 430px;
+	height: 50px;
+	margin: 10px auto;
+}
+
+.config_btn .layui-btn {
+	width: 97px;
+	height: 40px;
+	background-color: #5188F3;
+	font-size: 17px;
+	text-align: center;
+}
+
+/* 树插件 */
+.no_sqingr {
+	width: 40px;
+	height: 80px;
+	margin: 50px 30px;
+}
+
+/* 审批样式 */
+.shengpi {
+	width: 300px;
+	height: 200px;
+}
+
+.spi {
+	width: 350px;
+	height: 160px;
+	/* border: 1px solid white; */
+	position: absolute;
+	top: 120px;
+	left: 100px;
+}
+
+/* 申请人蓝色块样式 */
+.css_a {
+	width: 35px;
+	height: 100px;
+	margin: 90px 30px;
+	background-color: #528AE9;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+}
+
+/* 审批人红色块样式 */
+.css_b {
+	width: 80px;
+	height: 40px;
+	background-color: #DE6668;
+	color: white;
+	font-size: 16px;
+	text-align: center;
+	line-height: 40px;
+	margin: 40px 0;
+}
+
+/* 操作块风格 */
+.sp {
+	margin: -125px 190px;
+	width: 100px;
+	height: 50px;
+}
+
+/* 每个绿色小按钮样式 */
+.item {
+	margin: 20px 0;
+	width: 60px;
+	height: 30px;
+	background-color: #76A047;
+	color: white;
+	font-size: 16px;
+	line-height: 30px;
+	text-align: center;
+}
+
+
+/* 审批人配置 */
+#shenpi_man .content_sprpz {
+	width: 430px;
+	height: 600px;
+	background-color: #F2F2F2;
+}
+
+#shenpi_man form {
+	margin: auto;
+	width: 400px;
+	height: 550px;
+	border: 1px solid #F2F2F2;
+}
+
+#shenpi_man ul li {
+	margin: 10px auto;
+	/* border: 1px solid red; */
+}
+
+#shenpi_man p {
+	width: 100px;
+	height: 30px;
+	font-size: 18px;
+	margin: 10px 50px;
+}
+
+#shenpi_man .shenpi_input1 {
+	margin-top: 40px;
+	height: 40px;
+	margin-left: 15px;
+}
+
+#shenpi_man .shenpi_input1 input {
+	width: 220px;
+	height: 35px;
+	border: 1px solid black;
+	position: relative;
+	top: -43px;
+	left: 160px;
+}
+
+#shenpi_man .shenpi_input2 {
+	width: 400px;
+	height: 125px;
+}
+
+#shenpi_man .input2_s {
+	width: 400px;
+	height: 55px;
+}
+
+#shenpi_man .shenpi_input2 select {
+	width: 220px;
+	height: 35px;
+	position: relative;
+	top: -40px;
+	left: 160px;
+}
+
+#shenpi_man .shenpi_input3 {
+	width: 400px;
+	height: 170px;
+}
+
+#shenpi_man .input3_s {
+	width: 400px;
+	height: 55px;
+}
+
+#shenpi_man .shenpi_input3 .layui-input-block {
+	width: 220px;
+	height: 30px;
+	font-size: 17px;
+	position: relative;
+	top: -40px;
+	left: 55px;
+}
+
+#shenpi_man .shenpi_input4 {
+	margin-top: 20px;
+	width: 400px;
+}
+
+#shenpi_man .shenpi_input4 input {
+	border: 1px solid #4F4F4F;
+	margin: 10px 120px;
+	width: 180px;
+	height: 35px;
+	background-color: #F2F2F2;
+}
+
+/* 拒绝申请样式 */
+.content_reject {
+	width: 430px;
+	height: 217px;
+	background-color: #F2F2F2;
+}
+
+.content_reject form {
+	margin: auto;
+	width: 400px;
+	height: 150px;
+	border: 1px solid #F2F2F2;
+}
+
+.content_reject ul li {
+	margin: 10px auto;
+	/* border: 1px solid red; */
+}
+
+.content_reject p {
+	width: 100px;
+	height: 30px;
+	font-size: 18px;
+	margin: 10px 50px;
+}
+
+.content_reject .input2_s {
+	margin-top: 30px;
+	width: 400px;
+	height: 55px;
+}
+
+.content_reject .shenpi_input2 select {
+	width: 220px;
+	height: 35px;
+	position: relative;
+	top: -40px;
+	left: 160px;
+}
+
+.content_reject .shenpi_input4 {
+	margin-top: 20px;
+	width: 300px;
+}
+
+.content_reject .shenpi_input4 input {
+	border: 1px solid #4F4F4F;
+	margin: 10px 110px;
+	width: 145px;
+	height: 35px;
+	background-color: #F2F2F2;
+}
+
+/* 驳回弹出框样式 */
+.content_bohui {
+	width: 430px;
+	height: 217px;
+	background-color: #F2F2F2;
+}
+
+.content_bohui form {
+	margin: auto;
+	width: 400px;
+	height: 150px;
+	border: 1px solid #F2F2F2;
+}
+
+.content_bohui ul li {
+	margin: 10px auto;
+	/* border: 1px solid red; */
+}
+
+.content_bohui p {
+	width: 100px;
+	height: 30px;
+	font-size: 18px;
+	margin: 10px 50px;
+}
+
+.content_bohui .input2_s {
+	margin-top: 30px;
+	width: 400px;
+	height: 55px;
+}
+
+.content_bohui .shenpi_input2 select {
+	width: 220px;
+	height: 35px;
+	position: relative;
+	top: -40px;
+	left: 160px;
+}
+
+.content_bohui .shenpi_input4 {
+	margin-top: 20px;
+	width: 300px;
+}
+
+.content_bohui .shenpi_input4 input {
+	border: 1px solid #4F4F4F;
+	margin: 10px 110px;
+	width: 145px;
+	height: 35px;
+	background-color: #F2F2F2;
+}
